@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/titleFragment">
+
+    <fragment
+        android:id="@+id/titleFragment"
+        android:name="com.example.navigationsampleapp.TitleFragment"
+        android:label="fragment_title"
+        tools:layout="@layout/fragment_title" >
+        <action
+            android:id="@+id/action_titleFragment_to_gameFragment"
+            app:destination="@id/gameFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.example.navigationsampleapp.GameFragment"
+        android:label="fragment_game"
+        tools:layout="@layout/fragment_game" >
+        <action
+            android:id="@+id/action_gameFragment_to_overFragment"
+            app:destination="@id/overFragment"
+            app:popUpTo="@id/gameFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/overFragment"
+        android:name="com.example.navigationsampleapp.OverFragment"
+        android:label="fragment_over"
+        tools:layout="@layout/fragment_over" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.navigationsampleapp.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/rulesFragment"
+        android:name="com.example.navigationsampleapp.RulesFragment"
+        android:label="fragment_rules"
+        tools:layout="@layout/fragment_rules" />
+</navigation>
